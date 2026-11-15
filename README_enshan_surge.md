@@ -5,7 +5,7 @@
 ## 安装与更新
 
 1. 在 Surge 的「模块」中添加或更新以下地址：
-   `https://raw.githubusercontent.com/chea08/-/refs/heads/main/enshan_release.sgmodule`
+   `https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_release.sgmodule`
 2. 启用模块和 HTTPS 解密，安装并信任 Surge CA 证书。
 3. 用经过 Surge 的浏览器登录 `https://www.right.com.cn/forum/` 并刷新页面。首次获取登录 Cookie 时会收到通知；后续自动更新不会每次重复通知。
 4. 在 Surge 脚本列表手动运行「恩山论坛签到」，检查通知。以后由定时任务执行。
