@@ -7,10 +7,10 @@
 
 [Script]
 # 打开论坛首页或任意论坛页面时获取登录 Cookie，不读取请求正文。
-恩山论坛Cookie获取 = type=http-request,pattern=^https://www\.right\.com\.cn/forum/,requires-body=false,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_cookie_capture_qx.js?v=20261115-rename,timeout=5
+恩山论坛Cookie获取 = type=http-request,pattern=^https://www\.right\.com\.cn/forum/,requires-body=false,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_cookie.js?v=20261115-rename,timeout=5
 
 # 每天设备本地时间 08:00 自动签到。
-恩山论坛签到 = type=cron,cronexp="0 8 * * *",timeout=60,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_checkin_compatible.js?v=20261115-rename
+恩山论坛签到 = type=cron,cronexp="0 8 * * *",timeout=60,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_checkin.js?v=20261115-rename
 
 [MITM]
 hostname = %APPEND% www.right.com.cn
