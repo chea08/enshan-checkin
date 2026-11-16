@@ -5,18 +5,18 @@
 ## 安装与更新
 
 1. 在 Surge 的「模块」中添加或更新以下地址：
-   `https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_release.sgmodule`
+   `https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan.sgmodule`
 2. 启用模块和 HTTPS 解密，安装并信任 Surge CA 证书。
-3. 用经过 Surge 的浏览器登录 `https://www.right.com.cn/forum/` 并刷新页面。首次获取登录 Cookie 时会收到通知；后续自动更新不会每次重复通知。
+3. 用经过 Surge 的浏览器登录 `https://www.right.com.cn/forum/`，点击头像进入个人资料页并刷新，即可获取 Cookie，无需点击签到。个人资料页地址包含 `home.php?mod=space` 和 `do=profile` 或 `mycenter=1`，不绑定固定 UID。已保存 Cookie 时也会提示更新成功；同一登录一分钟内连续刷新仅提示一次。其他论坛页面仍会自动更新 Cookie。
 4. 在 Surge 脚本列表手动运行「恩山论坛签到」，检查通知。以后由定时任务执行。
 
-2026-11-15 版脚本地址增加版本参数，让更新模块后使用新的脚本资源。若仍运行旧版，请在 Surge 的外部资源列表更新关联脚本，再重新启用模块。
+2026-11-16 版更新个人资料页的 Cookie 获取提示，并增加版本参数。若仍运行旧版，请在 Surge 的外部资源列表更新关联脚本，再重新启用模块。
 
 ## 文件
 
-- `enshan_release.sgmodule`：远程脚本配置、Cookie 抓取规则和每日任务。
-- `enshan_cookie_capture_qx.js`：获取登录 Cookie 和浏览器 User-Agent。
-- `enshan_checkin_compatible.js`：获取新 formhash、提交签到并复核结果。
+- `enshan.sgmodule`：远程脚本配置、Cookie 抓取规则和每日任务。
+- `enshan_cookie.js`：获取登录 Cookie 和浏览器 User-Agent。
+- `enshan_checkin.js`：获取新 formhash、提交签到并复核结果。
 
 保留原有 Cookie 存储键 `enshan_forum_cookie`。抓取脚本忽略游客请求，避免覆盖登录 Cookie；不在通知或日志中展示 Cookie。切换账号后重新登录并刷新论坛即可更新。
 

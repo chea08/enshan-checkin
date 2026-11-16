@@ -1,13 +1,13 @@
 #!name=恩山论坛签到
-#!desc=登录后自动获取 Cookie，每日 08:00 签到；遇登录失效或网站验证时通知。
+#!desc=登录后打开个人资料页即可获取 Cookie，无需点击签到；每日 08:00 自动签到。
 #!system=ios
 #!author=Minis
 #!homepage=https://github.com/chea08/enshan-checkin
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Checkmark.png
 
 [Script]
-# 打开论坛首页或任意论坛页面时获取登录 Cookie，不读取请求正文。
-恩山论坛Cookie获取 = type=http-request,pattern=^https://www\.right\.com\.cn/forum/,requires-body=false,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_cookie.js?v=20261115-rename,timeout=5
+# 打开个人资料页即获取并提示；其他论坛页面也会自动更新，不读取请求正文。
+恩山论坛Cookie获取 = type=http-request,pattern=^https://www\.right\.com\.cn/forum/,requires-body=false,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_cookie.js?v=20261116-profile,timeout=5
 
 # 每天设备本地时间 08:00 自动签到。
 恩山论坛签到 = type=cron,cronexp="0 8 * * *",timeout=60,script-path=https://raw.githubusercontent.com/chea08/enshan-checkin/refs/heads/main/enshan_checkin.js?v=20261115-rename
